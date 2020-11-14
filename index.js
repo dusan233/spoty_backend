@@ -10,7 +10,7 @@ let app = express();
 
 let redirect_uri = process.env.REDIRECT_URI + "/" || "http://localhost:8888/callback";
 
-app.get("/login", function (req, res) {
+app.get("/login", cors(), function (req, res) {
   const scopes = `user-follow-read user-follow-modify user-top-read user-read-playback-position user-read-recently-played user-library-modify 
       user-library-read playlist-read-collaborative playlist-modify-public playlist-read-private playlist-modify-private user-read-email
       user-read-private streaming
