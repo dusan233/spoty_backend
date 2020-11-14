@@ -28,7 +28,7 @@ app.get("/login", cors(), function (req, res) {
   );
 });
 
-app.get("/callback", function (req, res) {
+app.get("/callback", cors(),  function (req, res) {
   let code = req.query.code || null;
   let authOptions = {
     url: "https://accounts.spotify.com/api/token",
